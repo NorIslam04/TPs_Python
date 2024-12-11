@@ -1,4 +1,4 @@
-while True:
+while True:#for test
     word = input("Please enter a string: ")
 
     frame_width = 30
