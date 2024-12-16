@@ -1,15 +1,24 @@
 liste=[1,2,3,4,5]
-
-while True:
-    print(liste)
-    index=int(input("Entrer un index (-1 pour quitter): "))
-    if index==-1:
-        print("Programme Termine!")
-        print(liste)
-        break
-    value=int(input("Entrez une nouvelle valeur: "))
-    #si il veut modifier un element existe deja dans la liste
-    if 0<=index<len(liste) :
+print(liste)
+while True:#boucle pour s'assurer que l'index entree est un entier
+    try:
+        index=int(input("Entrer un index (-1 pour quitter): "))
+        if index==-1:
+            print("Programme Termine!")
+            print(liste)
+            break
+        if not(0<=index<len(liste)):
+            print("out-of-range! veuillez reessayer")
+            continue
+        """boucle pour s'assurer que la valeur entree est un entier, 
+        pour ne demande pas a l'utilisateur de reentrer l'index une fois qu'il a entre un index valide"""
+        while True:
+            try:
+                value=int(input("Entrez une nouvelle valeur: "))
+                break
+            except ValueError:
+                print("non-integer! veuillez reessayer")
         liste[index-1]=value
-    else:#si il veut ajouter un element a la liste a la fin
-        liste.append(value)
+        print(liste)
+    except ValueError:
+        print("non-integer! veuillez reessayer")        
