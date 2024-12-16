@@ -8,7 +8,8 @@ while True:
         print(liste)
         break
     value=int(input("Entrez une nouvelle valeur: "))
+    #si il veut modifier un element existe deja dans la liste
     if 0<=index<len(liste) :
         liste[index-1]=value
-    else:
+    else:#si il veut ajouter un element a la liste a la fin
         liste.append(value)
